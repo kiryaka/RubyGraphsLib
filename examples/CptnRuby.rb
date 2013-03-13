@@ -25,7 +25,6 @@
 # ...Enemies, a more sophisticated object system, weapons, title and credits
 # screens...
 
-require 'rubygems'
 require 'gosu'
 include Gosu
 
@@ -59,7 +58,7 @@ class CptnRuby
     @map = window.map
     # Load all animation frames
     @standing, @walk1, @walk2, @jump =
-      *Image.load_tiles(window, "media/CptnRuby.png", 50, 50, false)
+      *Image.load_tiles(window, File.dirname(__FILE__) +  "/media/CptnRuby.png", 50, 50, false)
     # This always points to the frame that is currently drawn.
     # This is set in update, and used in draw.
     @cur_image = @standing    
@@ -138,9 +137,9 @@ class Map
   
   def initialize(window, filename)
     # Load 60x60 tiles, 5px overlap in all four directions.
-    @tileset = Image.load_tiles(window, "media/CptnRuby Tileset.png", 60, 60, true)
+    @tileset = Image.load_tiles(window, File.dirname(__FILE__) +  "/media/CptnRuby Tileset.png", 60, 60, true)
 
-    gem_img = Image.new(window, "media/CptnRuby Gem.png", false)
+    gem_img = Image.new(window, File.dirname(__FILE__) +  "/media/CptnRuby Gem.png", false)
     @gems = []
 
     lines = File.readlines(filename).map { |line| line.chomp }
@@ -191,8 +190,8 @@ class Game < Window
   def initialize
     super(640, 480, false)
     self.caption = "Cptn. Ruby"
-    @sky = Image.new(self, "media/Space.png", true)
-    @map = Map.new(self, "media/CptnRuby Map.txt")
+    @sky = Image.new(self, File.dirname(__FILE__) +  "/media/Space.png", true)
+    @map = Map.new(self, File.dirname(__FILE__) +  "/media/CptnRuby Map.txt")
     @cptn = CptnRuby.new(self, 400, 100)
     # The scrolling position is stored as top left corner of the screen.
     @camera_x = @camera_y = 0

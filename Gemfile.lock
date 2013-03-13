@@ -1,10 +1,20 @@
 GEM
   specs:
     chipmunk (5.3.4.5)
+    diff-lcs (1.2.1)
     gosu (0.7.45)
     opengl (0.8.0)
+    rake (10.0.3)
     rb-appscript (0.6.1)
     rmagick (2.13.2)
+    rspec (2.13.0)
+      rspec-core (~> 2.13.0)
+      rspec-expectations (~> 2.13.0)
+      rspec-mocks (~> 2.13.0)
+    rspec-core (2.13.1)
+    rspec-expectations (2.13.0)
+      diff-lcs (>= 1.1.3, < 2.0)
+    rspec-mocks (2.13.0)
     ruby-opengl (0.61.0)
       opengl
 
@@ -14,6 +24,8 @@ PLATFORMS
 DEPENDENCIES
   chipmunk
   gosu
+  rake
   rb-appscript
   rmagick
+  rspec
   ruby-opengl
