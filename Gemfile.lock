@@ -1,0 +1,19 @@
+GEM
+  specs:
+    chipmunk (5.3.4.5)
+    gosu (0.7.45)
+    opengl (0.8.0)
+    rb-appscript (0.6.1)
+    rmagick (2.13.2)
+    ruby-opengl (0.61.0)
+      opengl
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  chipmunk
+  gosu
+  rb-appscript
+  rmagick
+  ruby-opengl
