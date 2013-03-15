@@ -1,7 +1,7 @@
 $LOAD_PATH << '../lib'
 require 'gosu'
 require 'rubygems'
-require 'spec'
+require 'RSpec'
 
 class Test < Gosu::Window
   def initialize

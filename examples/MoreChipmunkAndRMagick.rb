@@ -22,11 +22,11 @@ module ZOrder
 end
 
 SCREEN_WIDTH = 640
-SCREEN_HEIGHT = 480
+SCREEN_HEIGHT = 680
 TICK = 1.0/60.0
-NUM_POLYGONS = 80
-NUM_SIDES = 4
-EDGE_SIZE = 15
+NUM_POLYGONS = 1500
+NUM_SIDES = 8
+EDGE_SIZE = 2
 
 # Everything appears in the Gosu::Window.
 class DemoWindow < Gosu::Window
@@ -71,6 +71,13 @@ class DemoWindow < Gosu::Window
                gc.polygon(x - base + 1, y + base - 1, x + base - 1, y + base - 1,  x, y - height + 1)
            end
        end
+       rect_shape =  [CP::Vec2.new(0, 0), CP::Vec2.new(0, 40), CP::Vec2.new(640, 0)]
+       body = CP::Body.new(Float::MAX, Float::MAX)
+       shape = CP::Shape::Poly.new(body, rect_shape, CP::Vec2.new(0, 550))
+       shape.e = 1
+       shape.u = 1
+       @space.add_static_shape(shape)
+       gc.polygon(0, 550,0,590,640,550)
        # do the drawing
        gc.draw(background)
    end
